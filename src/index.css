@@ -1218,3 +1218,644 @@ body,
     transform: scale(1.2);
   }
 }
+
+/* ── Auth tabs ── */
+.auth-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--tg-input-field);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+  max-width: 340px;
+}
+.auth-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  border-radius: 9px;
+  color: var(--tg-text-secondary);
+  font-size: 14px;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.auth-tab--active {
+  background: var(--tg-accent);
+  color: #fff;
+}
+
+.auth-email-input {
+  width: 100%;
+  background: var(--tg-input-field);
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  color: var(--tg-text);
+  font-size: 15px;
+  font-family: "Golos Text", sans-serif;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.auth-email-input::placeholder {
+  color: var(--tg-text-secondary);
+}
+.auth-email-input:focus {
+  border-color: var(--tg-accent);
+}
+
+.auth-security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--tg-online);
+  font-size: 12.5px;
+}
+
+/* ── Chat type badges on avatars ── */
+.tg-chat-type-badge {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 16px;
+  height: 16px;
+  background: var(--tg-accent);
+  border-radius: 50%;
+  border: 2px solid var(--tg-sidebar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.tg-chat-type-badge--group {
+  background: #ee4928;
+}
+.tg-chat-type-badge--secret {
+  background: #3d8b6a;
+}
+.tg-chat-type-badge--bot {
+  background: #7c5cbf;
+}
+
+/* ── Verified + premium icons ── */
+.tg-verified {
+  color: #5288c1;
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.tg-secret-icon {
+  color: #3d8b6a;
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+.chat-premium-star {
+  font-size: 11px;
+  margin-right: 2px;
+}
+.chat-type-icon {
+  color: var(--tg-text-secondary);
+  display: inline-flex;
+  vertical-align: middle;
+}
+.chat-type-icon--secret {
+  color: #3d8b6a;
+}
+
+/* ── System message ── */
+.tg-system-msg {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--tg-text-secondary);
+  background: rgba(82, 136, 193, 0.1);
+  border-radius: 12px;
+  padding: 5px 14px;
+  margin: 4px auto;
+  max-width: 400px;
+}
+
+/* ── Forwarded message ── */
+.tg-forwarded {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--tg-accent);
+  margin-bottom: 4px;
+  font-style: italic;
+}
+.tg-edited {
+  font-size: 11px;
+  color: var(--tg-text-secondary);
+  margin-left: 4px;
+}
+
+/* ── Reactions ── */
+.tg-reactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+.tg-reaction {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--tg-text);
+  transition: background 0.12s;
+  font-family: "Golos Text", sans-serif;
+}
+.tg-reaction:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.tg-reaction--mine {
+  background: rgba(82, 136, 193, 0.25);
+  border-color: var(--tg-accent);
+}
+
+.reaction-picker {
+  position: absolute;
+  z-index: 200;
+  background: #253241;
+  border: 1px solid var(--tg-border);
+  border-radius: 32px;
+  padding: 6px 10px;
+  display: flex;
+  gap: 4px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  bottom: calc(100% + 6px);
+  left: 0;
+  animation: tgFadeIn 0.12s ease both;
+}
+.reaction-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.1s,
+    background 0.1s;
+}
+.reaction-btn:hover {
+  transform: scale(1.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Channel / secret banners ── */
+.channel-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(82, 136, 193, 0.12);
+  color: var(--tg-text-secondary);
+  font-size: 13px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--tg-border);
+}
+.channel-banner--secret {
+  background: rgba(61, 139, 106, 0.15);
+  color: #4dcd5e;
+}
+
+.channel-subscribe-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--tg-input-bg);
+  border-top: 1px solid var(--tg-border);
+  color: var(--tg-text-secondary);
+  font-size: 14px;
+}
+.channel-notify-btn {
+  margin-left: auto;
+  background: var(--tg-input-field);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tg-accent);
+  cursor: pointer;
+}
+
+/* ── Settings dropdown ── */
+.tg-settings-menu {
+  position: absolute;
+  left: 8px;
+  top: 60px;
+  width: 300px;
+  background: #1a2533;
+  border: 1px solid var(--tg-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  z-index: 500;
+  overflow: hidden;
+  animation: tgFadeIn 0.15s ease both;
+}
+.tg-settings-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--tg-border);
+  background: var(--tg-header);
+}
+.tg-settings-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tg-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tg-settings-sub {
+  font-size: 12.5px;
+  color: var(--tg-text-secondary);
+  margin-top: 2px;
+}
+
+.tg-settings-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 16px;
+  background: none;
+  border: none;
+  color: var(--tg-text);
+  font-size: 14px;
+  font-family: "Golos Text", sans-serif;
+  cursor: pointer;
+  transition: background 0.1s;
+  text-align: left;
+}
+.tg-settings-item:hover {
+  background: var(--tg-sidebar-hover);
+}
+.tg-settings-item--premium {
+  color: #f0b429;
+}
+.premium-tag {
+  margin-left: auto;
+  background: linear-gradient(135deg, #f0b429, #e07b00);
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 8px;
+}
+
+/* ── Premium badge in chat list ── */
+.premium-badge {
+  background: linear-gradient(135deg, #f0b429, #e07b00);
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 8px;
+  margin-left: 4px;
+}
+
+/* ── Premium modal ── */
+.tg-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: tgFadeIn 0.15s ease both;
+}
+.premium-modal {
+  background: #1a2533;
+  border-radius: 20px;
+  padding: 32px 28px 24px;
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+  border: 1px solid rgba(240, 180, 41, 0.3);
+  box-shadow: 0 0 60px rgba(240, 180, 41, 0.15);
+}
+.premium-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+.premium-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.premium-icon {
+  font-size: 52px;
+  margin-bottom: 8px;
+}
+.premium-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0b429;
+  margin: 0 0 6px;
+}
+.premium-header p {
+  font-size: 14px;
+  color: var(--tg-text-secondary);
+  margin: 0;
+}
+.premium-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+.premium-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--tg-text);
+  font-size: 14px;
+  transition: background 0.1s;
+}
+.premium-feature-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.premium-feature-icon {
+  color: #f0b429;
+  flex-shrink: 0;
+}
+.premium-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #f0b429, #e07b00);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Golos Text", sans-serif;
+  cursor: pointer;
+  transition:
+    opacity 0.15s,
+    transform 0.1s;
+}
+.premium-btn:hover {
+  opacity: 0.9;
+}
+.premium-btn:active {
+  transform: scale(0.98);
+}
+.premium-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--tg-text-secondary);
+  margin: 8px 0 0;
+}
+
+/* ── Profile additions ── */
+.profile-verified {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--tg-accent);
+}
+.profile-premium-badge {
+  font-size: 12.5px;
+  color: #f0b429;
+}
+.profile-members {
+  text-align: center;
+  font-size: 13px;
+  color: var(--tg-text-secondary);
+  padding: 0 16px 12px;
+}
+.profile-shared-media {
+  padding: 16px;
+}
+.profile-section-title {
+  font-size: 13px;
+  color: var(--tg-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.profile-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.profile-media-item {
+  aspect-ratio: 1;
+  background: var(--tg-input-field);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.profile-media-item:hover {
+  background: #2d3f52;
+}
+
+/* ── Call screen ── */
+.call-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Golos Text", sans-serif;
+}
+.call-bg {
+  position: absolute;
+  inset: 0;
+  animation: callPulse 3s ease-in-out infinite;
+}
+@keyframes callPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+.call-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+.call-lock {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(77, 205, 94, 0.15);
+  color: #4dcd5e;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(77, 205, 94, 0.3);
+}
+.call-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  box-shadow:
+    0 0 0 12px rgba(255, 255, 255, 0.05),
+    0 0 0 24px rgba(255, 255, 255, 0.03);
+  animation: callRing 2s ease-in-out infinite;
+}
+@keyframes callRing {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 12px rgba(255, 255, 255, 0.05),
+      0 0 0 24px rgba(255, 255, 255, 0.03);
+  }
+  50% {
+    box-shadow:
+      0 0 0 18px rgba(255, 255, 255, 0.07),
+      0 0 0 36px rgba(255, 255, 255, 0.04);
+  }
+}
+.call-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+}
+.call-status {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.call-timer {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.call-dots span {
+  animation: tgDot 1.2s infinite;
+  display: inline-block;
+}
+.call-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.call-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.call-video-preview {
+  width: 280px;
+  height: 160px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  position: relative;
+}
+.call-video-self {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.call-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.call-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: "Golos Text", sans-serif;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+  position: relative;
+}
+.call-btn span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+.call-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.call-btn--active {
+  background: rgba(255, 255, 255, 0.25);
+}
+.call-btn--end {
+  background: #e53935;
+  width: 72px;
+  height: 72px;
+}
+.call-btn--end:hover {
+  background: #c62828;
+}
